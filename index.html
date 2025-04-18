@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduPath Finder | Home</title>
+  <link rel="icon" href="https://i.postimg.cc/ZKCMfXwz/edupath-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #e6f7ff, #f9f0ff);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #00bfa5, #7c4dff);
+      color: white;
+      padding: 20px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: fadeInDown 0.8s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeInDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    header img { height: 55px; }
+
+    .brand { display: flex; align-items: center; }
+
+    .brand h2 {
+      margin-left: 15px;
+      font-weight: 600;
+    }
+
+    nav {
+      background: #5e35b1;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 16px;
+      font-weight: 500;
+      font-size: 16px;
+      transition: 0.4s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+      transform: scale(1.05);
+    }
+
+    main {
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    main h1 {
+      font-size: 3em;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    main p {
+      font-size: 1.2em;
+      color: #444;
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons .btn {
+      padding: 14px 30px;
+      margin: 10px;
+      font-size: 16px;
+      background: linear-gradient(to right, #00bcd4, #7c4dff);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(3, 8, 17, 0.014);
+      cursor: pointer;
+      transition: 10s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(to right, #26c6da, #9575cd);
+    }
+
+    .chatbot-container {
+      width: 95%;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .chatbox {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      background: #fafafa;
+      border-radius: 12px;
+    }
+
+    .message {
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    .message.user { background-color: #e1f5fe; text-align: right; }
+    .message.bot { background-color: #ede7f6; text-align: left; }
+
+    #userInput {
+      width: 75%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+    }
+
+    .send-btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      background-color: #00bfa5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .send-btn:hover { background-color: #008e76; }
+
+    .footer {
+      margin-top: 60px;
+      background: #4527a0;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 14px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .db-status {
+      position: fixed;
+      bottom: 12px;
+      right: 12px;
+      color: #00c853;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      main h1 { font-size: 2.2em; }
+      .brand h2 { font-size: 18px; }
+      nav a { margin: 5px 10px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="https://i.postimg.cc/5t2sZPnV/edupath-logo-blue.png" alt="EduPath Logo">
+      <h2>EduPath Finder</h2>
+    </div>
+    <p>Your Smart College & Career Assistant</p>
+  </header>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="compare.html"><i class="fas fa-balance-scale"></i> Compare Colleges</a>
+    <a href="career-suggest.html"><i class="fas fa-briefcase"></i> Career Guide</a>
+    <a href="search.html"><i class="fas fa-search"></i> Search Colleges</a>
+    <a href="college-reviews.html"><i class="fas fa-comments"></i> College Reviews</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+    <a href="future.html"><i class="fas fa-lightbulb"></i> Future Vision</a>
+    <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login/Register</a>
+  </nav>
+
+  <main>
+    <h1>Welcome to EduPath Finder</h1>
+    <p>Explore, Compare, and Choose the Right College for You!</p>
+    <div class="cta-buttons">
+      <button class="btn" onclick="window.location.href='compare.html'">Start Comparing</button>
+      <button class="btn" onclick="window.location.href='search.html'">Find My College</button>
+    </div>
+
+    <div class="chatbot-container">
+      <div id="chatbox" class="chatbox">
+        <div class="message bot">Hi! I'm EduBot. Ask me anything about colleges or careers.</div>
+      </div>
+      <input type="text" id="userInput" placeholder="Ask something..." />
+      <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+  </main>
+
+  <div class="footer">
+    &copy; 2025 EduPath Finder | Designed for Students by Students
+  </div>
+
+  <div class="db-status">DB Connected</div>
+
+  <script>
+    const chatbox = document.getElementById("chatbox");
+
+    function addMessage(text, sender) {
+      const msg = document.createElement("div");
+      msg.className = "message " + sender;
+      msg.textContent = text;
+      chatbox.appendChild(msg);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const question = input.value.trim();
+      if (!question) return;
+
+      addMessage(question, "user");
+      input.value = "";
+
+      fetch("http://127.0.0.1:3001/homepage-chatbot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: question })
+      })
+      .then(res => res.json())
+      .then(data => {
+        const answer = data.reply || "Sorry, I didn't understand that.";
+        addMessage(answer, "bot");
+      })
+      .catch(() => {
+        addMessage("Sorry, I'm having trouble connecting to the server.", "bot");
+      });
+    }
+  </script>
+</body>
+</html>
